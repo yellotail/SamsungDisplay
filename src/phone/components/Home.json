@@ -1,0 +1,100 @@
+{
+    "attributes": {
+        "twx-widget": "",
+        "viewtype": "ar",
+        "is-widget-container": "true"
+    },
+    "children": [{
+        "name": "twx-container-content",
+        "children": [{
+            "attributes": {
+                "twx-widget": "",
+                "translation-key": "@ptc/ves-ar-extension:3D Container",
+                "is-widget-container": "true"
+            },
+            "name": "twx-dt-view",
+            "children": [{
+                "name": "twx-container-content"
+            }]
+        }, {
+            "attributes": {
+                "twx-widget": "",
+                "translation-key": "@ptc/ves-ar-extension:2D Overlay",
+                "is-widget-container": "true"
+            },
+            "name": "twx-overlay",
+            "children": [{
+                "name": "twx-container-content",
+                "children": [{
+                    "attributes": {
+                        "twx-widget": "",
+                        "translation-key": "@ptc/ves-ar-extension:Top Panel",
+                        "position": "top",
+                        "is-widget-container": "true"
+                    },
+                    "name": "twx-overlay-container",
+                    "children": [{
+                        "name": "twx-container-content"
+                    }]
+                }, {
+                    "attributes": {
+                        "twx-widget": "",
+                        "translation-key": "@ptc/ves-ar-extension:2D Body"
+                    },
+                    "name": "twx-overlay-body",
+                    "children": [{
+                        "name": "twx-container-content",
+                        "children": [{
+                            "attributes": {
+                                "twx-widget": "",
+                                "translation-key": "@ptc/ves-ar-extension:Left Panel",
+                                "position": "left",
+                                "is-widget-container": "true"
+                            },
+                            "name": "twx-overlay-container",
+                            "children": [{
+                                "name": "twx-container-content"
+                            }]
+                        }, {
+                            "attributes": {
+                                "twx-widget": "",
+                                "translation-key": "@ptc/ves-ar-extension:Center Panel",
+                                "position": "center",
+                                "is-widget-container": "true"
+                            },
+                            "name": "twx-overlay-container",
+                            "children": [{
+                                "name": "twx-container-content"
+                            }]
+                        }, {
+                            "attributes": {
+                                "twx-widget": "",
+                                "translation-key": "@ptc/ves-ar-extension:Right Panel",
+                                "position": "right",
+                                "is-widget-container": "true"
+                            },
+                            "name": "twx-overlay-container",
+                            "children": [{
+                                "name": "twx-container-content"
+                            }]
+                        }]
+                    }]
+                }, {
+                    "attributes": {
+                        "twx-widget": "",
+                        "translation-key": "@ptc/ves-ar-extension:Bottom Panel",
+                        "position": "bottom",
+                        "is-widget-container": "true"
+                    },
+                    "name": "twx-overlay-container",
+                    "children": [{
+                        "name": "twx-container-content"
+                    }]
+                }]
+            }]
+        }]
+    }, {
+        "name": "twx-view-data"
+    }],
+    "name": "twx-view"
+}

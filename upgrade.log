@@ -1,0 +1,21 @@
+[2022-11-23T07:00:37.124Z] debug: [twx-studio:upgrade:SamsungDisplay] Begin upgrade of project
+[2022-11-23T07:00:37.125Z] info: [twx-studio:upgrade:SamsungDisplay] Upgrading project
+[2022-11-23T07:00:37.255Z] debug: [twx-studio:upgrade:SamsungDisplay] Make sure there are not any stale files lying around
+[2022-11-23T07:00:37.260Z] debug: [twx-studio:upgrade:SamsungDisplay] Create .gitignore for project dir
+[2022-11-23T07:00:37.260Z] debug: [twx-studio:upgrade:SamsungDisplay] Copying /src/**/* to project, overwrite=false
+[2022-11-23T07:00:37.261Z] debug: [twx-studio:upgrade:SamsungDisplay] Copying /**/* to project, skip /src/**/*,  overwrite=true
+[2022-11-23T07:00:37.365Z] debug: [twx-studio:upgrade:SamsungDisplay] Copy of project files complete
+[2022-11-23T07:00:37.366Z] debug: [twx-studio:upgrade:SamsungDisplay] Updating version to 
+[2022-11-23T07:00:37.366Z] debug: [twx-studio:upgrade:SamsungDisplay] onupgrade sucessful, now build the project
+[2022-11-23T07:00:37.366Z] debug: [twx-studio:upgrade:SamsungDisplay] BEGIN buildApp
+[2022-11-23T07:00:37.366Z] debug: [twx-studio:upgrade:SamsungDisplay] write settings
+[2022-11-23T07:00:37.366Z] debug: [twx-studio:upgrade:SamsungDisplay] copy runtime extensions
+[2022-11-23T07:00:38.671Z] debug: [twx-studio:upgrade:SamsungDisplay] packageThemeSet
+[2022-11-23T07:00:40.654Z] debug: [twx-studio:upgrade:SamsungDisplay] onBuild
+[2022-11-23T07:00:40.654Z] info: [twx-studio:upgrade:SamsungDisplay] Building ves-ar-extension app:
+[2022-11-23T07:00:41.309Z] debug: [twx-studio:upgrade:SamsungDisplay] pathDir
+[2022-11-23T07:00:41.309Z] debug: [twx-studio:upgrade:SamsungDisplay] scaffoldDir
+[2022-11-23T07:00:41.309Z] debug: [twx-studio:upgrade:SamsungDisplay] copySrc
+[2022-11-23T07:00:42.645Z] debug: [twx-studio:upgrade:SamsungDisplay] buildApp
+[2022-11-23T07:00:43.134Z] debug: [twx-studio:upgrade:SamsungDisplay] END buildApp
+[2022-11-23T07:00:43.134Z] debug: [twx-studio:upgrade:SamsungDisplay] Build succeeded.

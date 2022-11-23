@@ -1,0 +1,37 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "requires": [],
+  "experiences": [
+    {
+      "vumark": "",
+      "experienceType": "vumark",
+      "id": 1,
+      "index-keys": [],
+      "title": {
+        "en": "SamsungDisplay"
+      },
+      "description": {
+        "en": ""
+      },
+      "requires": [],
+      "tags": [],
+      "icon": "",
+      "viewName": "Home",
+      "url-template": ""
+    }
+  ],
+  "widgetsUsage": [
+    {
+      "timestamp": "2022-11-23T07:00:43.072Z",
+      "action": "LATEST_SAVE",
+      "usage": {
+        "twx-view": 1,
+        "twx-dt-view": 1,
+        "twx-overlay": 1,
+        "twx-overlay-container": 5,
+        "twx-overlay-body": 1
+      }
+    }
+  ]
+}
