@@ -32,6 +32,46 @@
         "value": ""
       },
       "name": "twx-app-param"
+    },
+    {
+      "attributes": {
+        "name": "Samsung_Display_NG",
+        "twx-entity-type": "Things",
+        "twx-entity-name": "Samsung_Display_NG"
+      },
+      "name": "twx-model",
+      "children": [
+        {
+          "attributes": {
+            "name": "NGList",
+            "twx-auto-refresh": "true",
+            "twx-model": "app.mdl[\"Samsung_Display_NG\"].properties[\"NGList\"]"
+          },
+          "name": "twx-model-property"
+        },
+        {
+          "attributes": {
+            "name": "thingTemplate",
+            "twx-auto-refresh": "true",
+            "twx-model": "app.mdl[\"Samsung_Display_NG\"].properties[\"thingTemplate\"]"
+          },
+          "name": "twx-model-property"
+        },
+        {
+          "attributes": {
+            "name": "getNGList",
+            "id": "getNGList"
+          },
+          "name": "twx-model-service"
+        },
+        {
+          "attributes": {
+            "name": "addNG",
+            "id": "addNG"
+          },
+          "name": "twx-model-service"
+        }
+      ]
     }
   ],
   "name": "twx-app-mdl"
