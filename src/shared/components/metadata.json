@@ -2,14 +2,16 @@
   "name": "",
   "version": "1.0.0",
   "requires": [
-    "w320dp"
+    "w600dp"
   ],
   "experiences": [
     {
-      "vumark": "",
+      "vumark": "50056:1",
       "experienceType": "vumark",
       "id": 1,
-      "index-keys": [],
+      "index-keys": [
+        "urn:vuforia:vumark:50056:1"
+      ],
       "title": {
         "en": "SamsungDisplay"
       },
@@ -23,15 +25,15 @@
       "tags": [],
       "icon": "",
       "viewName": "Home",
-      "url-template": "index.html?expId=1",
+      "url-template": "index.html?expId=1&vumark={{vuforia:vumark}}",
       "entryPoint": "index.html?expId=1",
       "thumbnail": ""
     }
   ],
   "widgetsUsage": [
     {
-      "timestamp": "2022-12-01T05:09:33.809Z",
-      "action": "LATEST_SAVE",
+      "timestamp": "2022-12-01T05:48:46.698Z",
+      "action": "PUBLISH",
       "usage": {
         "twx-view": 1,
         "twx-dt-view": 1,
@@ -42,6 +44,50 @@
         "twx-gridlayout": 5,
         "twx-row": 19,
         "twx-col": 56,
+        "twx-button": 5,
+        "twx-label": 33,
+        "twx-repeater": 1,
+        "twx-image2": 3,
+        "twx-select": 3,
+        "twx-textarea": 2,
+        "twx-toggle-button": 6
+      }
+    },
+    {
+      "timestamp": "2022-12-01T05:55:00.848Z",
+      "action": "PUBLISH",
+      "usage": {
+        "twx-view": 1,
+        "twx-dt-view": 1,
+        "twx-overlay": 1,
+        "twx-overlay-container": 5,
+        "twx-overlay-body": 1,
+        "twx-popup": 3,
+        "twx-gridlayout": 5,
+        "twx-row": 19,
+        "twx-col": 56,
+        "twx-button": 5,
+        "twx-label": 33,
+        "twx-repeater": 1,
+        "twx-image2": 3,
+        "twx-select": 3,
+        "twx-textarea": 2,
+        "twx-toggle-button": 6
+      }
+    },
+    {
+      "timestamp": "2022-12-01T07:18:21.503Z",
+      "action": "LATEST_SAVE",
+      "usage": {
+        "twx-view": 1,
+        "twx-dt-view": 1,
+        "twx-overlay": 1,
+        "twx-overlay-container": 5,
+        "twx-overlay-body": 1,
+        "twx-popup": 3,
+        "twx-gridlayout": 5,
+        "twx-row": 18,
+        "twx-col": 55,
         "twx-button": 5,
         "twx-label": 33,
         "twx-repeater": 1,
