@@ -8,8 +8,8 @@
   "state": {
     "orientation": "landscape",
     "customSize": {
-      "width": "1280",
-      "height": "800"
+      "width": "1920",
+      "height": "1080"
     }
   },
   "targets": {
@@ -45,8 +45,8 @@
   },
   "device": {
     "name": "custom",
-    "width": "1280",
-    "height": "800"
+    "width": "1920",
+    "height": "1080"
   },
   "mainNavigationMenuStyle": "leftSideMenu",
   "resourceDirectory": "src/phone/resources",

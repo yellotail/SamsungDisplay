@@ -30,7 +30,7 @@
   ],
   "widgetsUsage": [
     {
-      "timestamp": "2022-11-30T06:08:52.369Z",
+      "timestamp": "2022-12-01T05:09:33.809Z",
       "action": "LATEST_SAVE",
       "usage": {
         "twx-view": 1,
@@ -38,17 +38,17 @@
         "twx-overlay": 1,
         "twx-overlay-container": 5,
         "twx-overlay-body": 1,
-        "twx-popup": 2,
-        "twx-gridlayout": 4,
-        "twx-row": 16,
-        "twx-col": 51,
-        "twx-label": 31,
+        "twx-popup": 3,
+        "twx-gridlayout": 5,
+        "twx-row": 19,
+        "twx-col": 56,
+        "twx-button": 5,
+        "twx-label": 33,
         "twx-repeater": 1,
-        "twx-image2": 2,
+        "twx-image2": 3,
         "twx-select": 3,
         "twx-textarea": 2,
-        "twx-toggle-button": 6,
-        "twx-button": 2
+        "twx-toggle-button": 6
       }
     }
   ],

@@ -5,36 +5,6 @@
   "children": [
     {
       "attributes": {
-        "id": "vumark",
-        "isbound": "false",
-        "isdeletable": "false",
-        "name": "ThingMark",
-        "value": ""
-      },
-      "name": "twx-app-param"
-    },
-    {
-      "attributes": {
-        "id": "template",
-        "isbound": "false",
-        "isdeletable": "false",
-        "name": "Thing Template",
-        "value": ""
-      },
-      "name": "twx-app-param"
-    },
-    {
-      "attributes": {
-        "id": "thing",
-        "isbound": "false",
-        "isdeletable": "false",
-        "name": "Thing",
-        "value": ""
-      },
-      "name": "twx-app-param"
-    },
-    {
-      "attributes": {
         "name": "Samsung_Display_NG",
         "twx-entity-type": "Things",
         "twx-entity-name": "Samsung_Display_NG"
@@ -72,6 +42,36 @@
           "name": "twx-model-service"
         }
       ]
+    },
+    {
+      "attributes": {
+        "id": "vumark",
+        "isbound": "false",
+        "isdeletable": "false",
+        "name": "ThingMark",
+        "value": ""
+      },
+      "name": "twx-app-param"
+    },
+    {
+      "attributes": {
+        "id": "template",
+        "isbound": "false",
+        "isdeletable": "false",
+        "name": "Thing Template",
+        "value": ""
+      },
+      "name": "twx-app-param"
+    },
+    {
+      "attributes": {
+        "id": "thing",
+        "isbound": "false",
+        "isdeletable": "false",
+        "name": "Thing",
+        "value": ""
+      },
+      "name": "twx-app-param"
     }
   ],
   "name": "twx-app-mdl"
