@@ -30,7 +30,7 @@
   ],
   "widgetsUsage": [
     {
-      "timestamp": "2022-12-01T05:09:33.809Z",
+      "timestamp": "2022-12-01T14:02:14.837Z",
       "action": "LATEST_SAVE",
       "usage": {
         "twx-view": 1,
@@ -43,7 +43,7 @@
         "twx-row": 19,
         "twx-col": 56,
         "twx-button": 5,
-        "twx-label": 33,
+        "twx-label": 32,
         "twx-repeater": 1,
         "twx-image2": 3,
         "twx-select": 3,

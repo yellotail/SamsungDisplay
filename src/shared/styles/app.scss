@@ -161,3 +161,33 @@ $title-color: #f6f6f6;
   height: 65px;
   width: 250px;
 }
+
+// ========================== 불합리 등록 ==========================
+
+.popup-reglist .row{ // 각각 한 줄
+  width: 90%;
+}
+
+.popup-reglist .simple-label{ // 일반 글씨
+  font-size: 1rem;
+}
+
+.popup-reglist .popup-reglist-title{ // 타이틀
+  font-size: 1.5rem;
+}
+
+.popup-reglist .popup-reglist-lastBtn{
+  display: flex;
+  align-items: flex-end;
+  height: calc(100vh - 630px);
+  width: 100%;
+}
+
+.popup-reglist textarea{
+  height: 2rem;
+  width: 100%
+}
+
+.popup-reglist .label-content-score{
+  width: 30px !important;
+}

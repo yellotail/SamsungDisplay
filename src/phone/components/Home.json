@@ -29,7 +29,8 @@
             "twx-widget": "",
             "widget-id": "2DOverlay-1",
             "widget-name": "2D Overlay",
-            "is-widget-container": "true"
+            "is-widget-container": "true",
+            "class": ""
           },
           "name": "twx-overlay",
           "children": [
@@ -227,6 +228,7 @@
                                   "attributes": {
                                     "twx-widget": "",
                                     "widget-id": "popup-listview",
+                                    "is-visible-at-designtime": "false",
                                     "widget-name": "popup-listview",
                                     "is-widget-container": "true",
                                     "class": "popup-listView",
@@ -989,33 +991,16 @@
                                       ]
                                     }
                                   ]
-                                }
-                              ]
-                            }
-                          ]
-                        },
-                        {
-                          "attributes": {
-                            "twx-widget": "",
-                            "widget-id": "panel-4",
-                            "widget-name": "Right Panel",
-                            "is-widget-container": "true",
-                            "position": "right"
-                          },
-                          "name": "twx-overlay-container",
-                          "children": [
-                            {
-                              "name": "twx-container-content",
-                              "children": [
+                                },
                                 {
                                   "attributes": {
                                     "twx-widget": "",
                                     "widget-id": "popup-reglist",
-                                    "is-visible-at-designtime": "false",
                                     "widget-name": "popup-reglist",
                                     "is-widget-container": "true",
                                     "class": "popup-reglist",
                                     "width": "35%",
+                                    "height": "95vh",
                                     "padding": "",
                                     "centered": "false",
                                     "top": "25px",
@@ -1026,17 +1011,6 @@
                                     {
                                       "name": "twx-container-content",
                                       "children": [
-                                        {
-                                          "attributes": {
-                                            "twx-widget": "",
-                                            "widget-id": "label-32",
-                                            "state-format-value": "text",
-                                            "widget-name": "label-32",
-                                            "text": "불합리 수정",
-                                            "class": "popup-reglist-title"
-                                          },
-                                          "name": "twx-label"
-                                        },
                                         {
                                           "attributes": {
                                             "twx-widget": "",
@@ -1351,7 +1325,7 @@
                                                     "widget-name": "row-6",
                                                     "is-widget-container": "true",
                                                     "rowclass": "popup-reglist-row",
-                                                    "rowheight": "135px"
+                                                    "rowheight": "auto"
                                                   },
                                                   "name": "twx-row",
                                                   "children": [
@@ -1378,7 +1352,8 @@
                                                                     "twx-widget": "",
                                                                     "widget-id": "textArea-1",
                                                                     "widget-name": "textArea-1",
-                                                                    "class": ""
+                                                                    "class": "",
+                                                                    "rows": "5"
                                                                   },
                                                                   "name": "twx-textarea"
                                                                 }
@@ -1578,6 +1553,7 @@
                                                             "widget-name": "column-11",
                                                             "is-widget-container": "true",
                                                             "class": "label-content",
+                                                            "flexdirection": "row",
                                                             "alignment": "center"
                                                           },
                                                           "name": "twx-col",
@@ -1617,7 +1593,11 @@
                                                                   "attributes": {
                                                                     "twx-widget": "",
                                                                     "widget-id": "toggleButton-1",
-                                                                    "widget-name": "toggleButton-1"
+                                                                    "widget-name": "toggleButton-1",
+                                                                    "src": "Icons/ic_checked.png",
+                                                                    "srcnotpressed": "Icons/ic_unchecked.png",
+                                                                    "width": "1.5rem",
+                                                                    "height": "1.5rem"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1672,7 +1652,9 @@
                                                                   "attributes": {
                                                                     "twx-widget": "",
                                                                     "widget-id": "toggleButton-2",
-                                                                    "widget-name": "toggleButton-2"
+                                                                    "widget-name": "toggleButton-2",
+                                                                    "width": "1.5rem",
+                                                                    "height": "1.5rem"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1727,7 +1709,9 @@
                                                                   "attributes": {
                                                                     "twx-widget": "",
                                                                     "widget-id": "toggleButton-3",
-                                                                    "widget-name": "toggleButton-3"
+                                                                    "widget-name": "toggleButton-3",
+                                                                    "width": "1.5rem",
+                                                                    "height": "1.5rem"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1782,7 +1766,9 @@
                                                                   "attributes": {
                                                                     "twx-widget": "",
                                                                     "widget-id": "toggleButton-4",
-                                                                    "widget-name": "toggleButton-4"
+                                                                    "widget-name": "toggleButton-4",
+                                                                    "width": "25px",
+                                                                    "height": "1.5rem"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1883,7 +1869,9 @@
                                                                   "attributes": {
                                                                     "twx-widget": "",
                                                                     "widget-id": "toggleButton-5",
-                                                                    "widget-name": "toggleButton-5"
+                                                                    "widget-name": "toggleButton-5",
+                                                                    "width": "1.5rem",
+                                                                    "height": "1.5rem"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1939,7 +1927,9 @@
                                                                   "attributes": {
                                                                     "twx-widget": "",
                                                                     "widget-id": "toggleButton-6",
-                                                                    "widget-name": "toggleButton-6"
+                                                                    "widget-name": "toggleButton-6",
+                                                                    "width": "1.5rem",
+                                                                    "height": "1.5rem"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1999,10 +1989,10 @@
                                                             "widget-id": "column-29",
                                                             "widget-name": "column-29",
                                                             "is-widget-container": "true",
-                                                            "class": "label-content",
+                                                            "class": "label-content-score",
                                                             "justification": "center",
                                                             "alignment": "flex-start",
-                                                            "fixedcolsize": "",
+                                                            "fixedcolsize": "100px",
                                                             "padding": "0px 0px 0px 10px"
                                                           },
                                                           "name": "twx-col",
@@ -2058,7 +2048,8 @@
                                                     "twx-widget": "",
                                                     "widget-id": "row-13",
                                                     "widget-name": "row-13",
-                                                    "is-widget-container": "true"
+                                                    "is-widget-container": "true",
+                                                    "rowclass": "popup-reglist-lastBtn"
                                                   },
                                                   "name": "twx-row",
                                                   "children": [
@@ -2131,6 +2122,21 @@
                                   ]
                                 }
                               ]
+                            }
+                          ]
+                        },
+                        {
+                          "attributes": {
+                            "twx-widget": "",
+                            "widget-id": "panel-4",
+                            "widget-name": "Right Panel",
+                            "is-widget-container": "true",
+                            "position": "right"
+                          },
+                          "name": "twx-overlay-container",
+                          "children": [
+                            {
+                              "name": "twx-container-content"
                             }
                           ]
                         }
