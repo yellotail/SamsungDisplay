@@ -44,9 +44,9 @@
     }
   },
   "device": {
-    "name": "custom",
-    "width": "1920",
-    "height": "1080"
+    "name": "galaxy_tab",
+    "width": "1280",
+    "height": "800"
   },
   "mainNavigationMenuStyle": "leftSideMenu",
   "resourceDirectory": "src/phone/resources",
