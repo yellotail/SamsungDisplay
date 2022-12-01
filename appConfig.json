@@ -6,7 +6,11 @@
   "thingworxServer": "http://yellotail.asuscomm.com:30080",
   "viewTemplateFileName": "home-ar.json",
   "state": {
-    "orientation": "portrait"
+    "orientation": "landscape",
+    "customSize": {
+      "width": "1920",
+      "height": "1080"
+    }
   },
   "targets": {
     "phone": {
@@ -40,7 +44,9 @@
     }
   },
   "device": {
-    "name": "phone"
+    "name": "custom",
+    "width": "1920",
+    "height": "1080"
   },
   "mainNavigationMenuStyle": "leftSideMenu",
   "resourceDirectory": "src/phone/resources",
@@ -48,5 +54,5 @@
   "fontRuntimeDir": "../fonts",
   "fontDesigntimeDir": "../dist/fonts",
   "theme": "twx-light",
-  "version": "1.70.2314"
+  "version": "1.80.2338"
 }
