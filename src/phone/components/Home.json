@@ -155,7 +155,7 @@
                                                                     "twx-widget": "",
                                                                     "widget-id": "button-8",
                                                                     "widget-name": "button-8",
-                                                                    "click-expression": "clickRegList();",
+                                                                    "click-expression": "openRegList();",
                                                                     "text": "불합리 등록",
                                                                     "class": "button-regList",
                                                                     "margin": ""
@@ -201,7 +201,7 @@
                                                                     "twx-widget": "",
                                                                     "widget-id": "button-7",
                                                                     "widget-name": "button-7",
-                                                                    "click-expression": "clickListView();",
+                                                                    "click-expression": "openListView();",
                                                                     "text": "불합리 목록보기",
                                                                     "class": "button-listView"
                                                                   },
@@ -227,6 +227,7 @@
                                   "attributes": {
                                     "twx-widget": "",
                                     "widget-id": "popup-listview",
+                                    "is-visible-at-designtime": "false",
                                     "widget-name": "popup-listview",
                                     "is-widget-container": "true",
                                     "class": "popup-listView",
@@ -1156,7 +1157,6 @@
                                   "attributes": {
                                     "twx-widget": "",
                                     "widget-id": "popup-reglist",
-                                    "is-visible-at-designtime": "false",
                                     "widget-name": "popup-reglist",
                                     "is-widget-container": "true",
                                     "class": "popup-reglist",
@@ -2292,6 +2292,7 @@
                                                                     "twx-widget": "",
                                                                     "widget-id": "button-1",
                                                                     "widget-name": "button-1",
+                                                                    "click-expression": "addRegList();",
                                                                     "text": "등록",
                                                                     "class": "button-register label-content"
                                                                   },
