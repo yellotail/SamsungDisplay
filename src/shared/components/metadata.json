@@ -76,7 +76,7 @@
       }
     },
     {
-      "timestamp": "2022-12-02T05:17:19.410Z",
+      "timestamp": "2022-12-02T07:09:41.205Z",
       "action": "LATEST_SAVE",
       "usage": {
         "twx-view": 1,
@@ -84,14 +84,14 @@
         "twx-overlay": 1,
         "twx-overlay-container": 5,
         "twx-overlay-body": 1,
-        "twx-popup": 3,
-        "twx-gridlayout": 5,
-        "twx-row": 18,
-        "twx-col": 55,
-        "twx-button": 5,
-        "twx-label": 32,
+        "twx-popup": 4,
+        "twx-gridlayout": 6,
+        "twx-row": 20,
+        "twx-col": 58,
+        "twx-button": 6,
+        "twx-label": 33,
         "twx-repeater": 1,
-        "twx-image2": 3,
+        "twx-image2": 4,
         "twx-select": 3,
         "twx-textarea": 2,
         "twx-toggle-button": 6
