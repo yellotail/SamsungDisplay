@@ -4,6 +4,7 @@ $scope.reglist = 'popup-reglist';
 $scope.listview = 'popup-listview';
 
 $scope.checklist = {
+    currentIndex: -1,
     currentCategory: -1,
     currentItem: -1,
     currentContent: -1,
@@ -159,7 +160,7 @@ $scope.onChangeContent = function () {
 }
 
 // 메인메뉴
-$scope.clickRegList = function () {
+$scope.openRegList = function () {
     let widget = getWidget($scope.reglist);
     if (widget) {
         setWidgetVisible($scope.toolbar, false);
@@ -167,7 +168,7 @@ $scope.clickRegList = function () {
     }
 }
 
-$scope.clickListView = function () {
+$scope.openListView = function () {
     let widget = getWidget($scope.listview);
     if (widget) {
         setWidgetVisible($scope.toolbar, false);
@@ -177,6 +178,19 @@ $scope.clickListView = function () {
 }
 
 // 등록
+function registerNewList() {
+
+}
+
+$scope.addRegList = function() {
+    let widget = getWidget($scope.reglist);
+    if (widget) {
+        registerNewList();
+        hideWidget(widget);
+        setWidgetVisible($scope.toolbar, true);
+    }
+}
+
 $scope.cancelRegList = function () {
     let widget = getWidget($scope.reglist);
     if (widget) {
@@ -233,6 +247,7 @@ $scope.closeListView = function () {
 }
 
 $scope.clickListViewRow = function(index) {
+    $scope.checklist.currentIndex = index;
     
 }
 $scope.showPrevPicture = function(index) {    
