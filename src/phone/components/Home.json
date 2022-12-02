@@ -994,14 +994,14 @@
                                   "attributes": {
                                     "twx-widget": "",
                                     "widget-id": "popup-reglist",
-                                    "is-visible-at-designtime": "false",
                                     "widget-name": "popup-reglist",
                                     "is-widget-container": "true",
                                     "class": "popup-reglist",
-                                    "width": "35%",
+                                    "width": "28%",
+                                    "height": "90%",
                                     "padding": "",
                                     "centered": "false",
-                                    "top": "25px",
+                                    "top": "10%",
                                     "right": "28px"
                                   },
                                   "name": "twx-popup",
@@ -1009,17 +1009,6 @@
                                     {
                                       "name": "twx-container-content",
                                       "children": [
-                                        {
-                                          "attributes": {
-                                            "twx-widget": "",
-                                            "widget-id": "label-32",
-                                            "state-format-value": "text",
-                                            "widget-name": "label-32",
-                                            "text": "불합리 수정",
-                                            "class": "popup-reglist-title"
-                                          },
-                                          "name": "twx-label"
-                                        },
                                         {
                                           "attributes": {
                                             "twx-widget": "",
@@ -1097,7 +1086,11 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-2",
                                                             "widget-name": "column-2",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "class": "label-content",
+                                                            "justification": "center",
+                                                            "alignment": "flex-start",
+                                                            "fixedcolsize": "50px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1123,7 +1116,8 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-3",
                                                             "widget-name": "column-3",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "padding": "2px 20px 2px 2px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1133,9 +1127,10 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "select-1",
-                                                                    "widget-name": "select-1",
-                                                                    "label": "Dropdown Label"
+                                                                    "widget-id": "dropdown-category",
+                                                                    "widget-name": "dropdown-category",
+                                                                    "change-expression": "onChangeCategory();",
+                                                                    "label": ""
                                                                   },
                                                                   "name": "twx-select"
                                                                 }
@@ -1165,7 +1160,11 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-4",
                                                             "widget-name": "column-4",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "class": "label-content",
+                                                            "justification": "center",
+                                                            "alignment": "flex-start",
+                                                            "fixedcolsize": "50px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1191,7 +1190,8 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-5",
                                                             "widget-name": "column-5",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "padding": "2px 20px 2px 2px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1201,9 +1201,10 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "select-2",
-                                                                    "widget-name": "select-2",
-                                                                    "label": "Dropdown Label"
+                                                                    "widget-id": "dropdown-item",
+                                                                    "widget-name": "dropdown-item",
+                                                                    "change-expression": "onChangeItem();",
+                                                                    "label": ""
                                                                   },
                                                                   "name": "twx-select"
                                                                 }
@@ -1233,7 +1234,11 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-6",
                                                             "widget-name": "column-6",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "class": "label-content",
+                                                            "justification": "center",
+                                                            "alignment": "flex-start",
+                                                            "fixedcolsize": "50px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1259,7 +1264,8 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-7",
                                                             "widget-name": "column-7",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "padding": "2px 20px 2px 2px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1269,9 +1275,10 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "select-3",
-                                                                    "widget-name": "select-3",
-                                                                    "label": "Dropdown Label"
+                                                                    "widget-id": "dropdown-content",
+                                                                    "widget-name": "dropdown-content",
+                                                                    "change-expression": "onChangeContent();",
+                                                                    "label": ""
                                                                   },
                                                                   "name": "twx-select"
                                                                 }
@@ -1334,7 +1341,7 @@
                                                     "widget-name": "row-6",
                                                     "is-widget-container": "true",
                                                     "rowclass": "popup-reglist-row",
-                                                    "rowheight": "135px"
+                                                    "rowheight": "105px"
                                                   },
                                                   "name": "twx-row",
                                                   "children": [
@@ -1347,9 +1354,10 @@
                                                             "widget-id": "column-9",
                                                             "widget-name": "column-9",
                                                             "is-widget-container": "true",
-                                                            "class": "textArea-issue",
-                                                            "alignment": "flex-start",
-                                                            "padding": "10px"
+                                                            "class": "",
+                                                            "justification": "center",
+                                                            "fixedcolsize": "",
+                                                            "padding": "1px 10px 1px 1px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1361,7 +1369,11 @@
                                                                     "twx-widget": "",
                                                                     "widget-id": "textArea-1",
                                                                     "widget-name": "textArea-1",
-                                                                    "class": ""
+                                                                    "class": "textArea-issue",
+                                                                    "rows": "5",
+                                                                    "maxlength": "",
+                                                                    "padding": "2px",
+                                                                    "margin": "2px"
                                                                   },
                                                                   "name": "twx-textarea"
                                                                 }
@@ -1379,7 +1391,8 @@
                                                     "widget-id": "row-7",
                                                     "widget-name": "row-7",
                                                     "is-widget-container": "true",
-                                                    "rowclass": "popup-reglist-row"
+                                                    "rowclass": "popup-reglist-row",
+                                                    "rowheight": "90px"
                                                   },
                                                   "name": "twx-row",
                                                   "children": [
@@ -1391,7 +1404,8 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-10",
                                                             "widget-name": "column-10",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "padding": "10px 0px 10px 0px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1430,7 +1444,7 @@
                                                                             "widget-id": "row-11",
                                                                             "widget-name": "row-11",
                                                                             "is-widget-container": "true",
-                                                                            "rowheight": "60px"
+                                                                            "rowheight": "32px"
                                                                           },
                                                                           "name": "twx-row",
                                                                           "children": [
@@ -1475,7 +1489,7 @@
                                                                             "widget-id": "row-12",
                                                                             "widget-name": "row-12",
                                                                             "is-widget-container": "true",
-                                                                            "rowheight": "50px"
+                                                                            "rowheight": "35px"
                                                                           },
                                                                           "name": "twx-row",
                                                                           "children": [
@@ -1561,7 +1575,8 @@
                                                             "widget-name": "column-11",
                                                             "is-widget-container": "true",
                                                             "class": "label-content",
-                                                            "alignment": "center"
+                                                            "alignment": "flex-start",
+                                                            "fixedcolsize": "100px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1588,8 +1603,10 @@
                                                             "widget-id": "column-18",
                                                             "widget-name": "column-18",
                                                             "is-widget-container": "true",
+                                                            "class": "",
                                                             "justification": "center",
-                                                            "alignment": "center"
+                                                            "alignment": "center",
+                                                            "fixedcolsize": "30px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1599,8 +1616,15 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "toggleButton-1",
-                                                                    "widget-name": "toggleButton-1"
+                                                                    "widget-id": "toggleButton-A",
+                                                                    "background-color": "",
+                                                                    "background-color-pressed": "",
+                                                                    "widget-name": "toggleButton-A",
+                                                                    "pressed-expression": "onChangeGrade(0);",
+                                                                    "src": "Icons/ic_checked.png",
+                                                                    "srcnotpressed": "Icons/ic_unchecked.png",
+                                                                    "width": "24px",
+                                                                    "height": "24px"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1616,7 +1640,8 @@
                                                             "is-widget-container": "true",
                                                             "class": "label-content",
                                                             "justification": "center",
-                                                            "alignment": "flex-start"
+                                                            "alignment": "center",
+                                                            "fixedcolsize": ""
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1644,7 +1669,8 @@
                                                             "widget-name": "column-20",
                                                             "is-widget-container": "true",
                                                             "justification": "center",
-                                                            "alignment": "center"
+                                                            "alignment": "center",
+                                                            "fixedcolsize": "30px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1654,8 +1680,15 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "toggleButton-2",
-                                                                    "widget-name": "toggleButton-2"
+                                                                    "widget-id": "toggleButton-B",
+                                                                    "background-color": "",
+                                                                    "background-color-pressed": "",
+                                                                    "widget-name": "toggleButton-B",
+                                                                    "pressed-expression": "onChangeGrade(1);",
+                                                                    "src": "Icons/ic_checked.png",
+                                                                    "srcnotpressed": "Icons/ic_unchecked.png",
+                                                                    "width": "24px",
+                                                                    "height": "24px"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1671,7 +1704,7 @@
                                                             "is-widget-container": "true",
                                                             "class": "label-content",
                                                             "justification": "center",
-                                                            "alignment": "flex-start"
+                                                            "alignment": "center"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1699,7 +1732,8 @@
                                                             "widget-name": "column-22",
                                                             "is-widget-container": "true",
                                                             "justification": "center",
-                                                            "alignment": "center"
+                                                            "alignment": "center",
+                                                            "fixedcolsize": "30px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1709,8 +1743,15 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "toggleButton-3",
-                                                                    "widget-name": "toggleButton-3"
+                                                                    "widget-id": "toggleButton-C",
+                                                                    "background-color": "",
+                                                                    "background-color-pressed": "",
+                                                                    "widget-name": "toggleButton-C",
+                                                                    "pressed-expression": "onChangeGrade(2);",
+                                                                    "src": "Icons/ic_checked.png",
+                                                                    "srcnotpressed": "Icons/ic_unchecked.png",
+                                                                    "width": "24x",
+                                                                    "height": "24px"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1726,7 +1767,7 @@
                                                             "is-widget-container": "true",
                                                             "class": "label-content",
                                                             "justification": "center",
-                                                            "alignment": "flex-start"
+                                                            "alignment": "center"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1754,7 +1795,8 @@
                                                             "widget-name": "column-24",
                                                             "is-widget-container": "true",
                                                             "justification": "center",
-                                                            "alignment": "center"
+                                                            "alignment": "center",
+                                                            "fixedcolsize": "30px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1764,8 +1806,15 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "toggleButton-4",
-                                                                    "widget-name": "toggleButton-4"
+                                                                    "widget-id": "toggleButton-D",
+                                                                    "background-color": "",
+                                                                    "background-color-pressed": "",
+                                                                    "widget-name": "toggleButton-D",
+                                                                    "pressed-expression": "onChangeGrade(3);",
+                                                                    "src": "Icons/ic_checked.png",
+                                                                    "srcnotpressed": "Icons/ic_unchecked.png",
+                                                                    "width": "24px",
+                                                                    "height": "24px"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1781,7 +1830,7 @@
                                                             "is-widget-container": "true",
                                                             "class": "label-content",
                                                             "justification": "center",
-                                                            "alignment": "flex-start"
+                                                            "alignment": "center"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1827,7 +1876,8 @@
                                                             "is-widget-container": "true",
                                                             "class": "label-content",
                                                             "justification": "center",
-                                                            "alignment": "flex-start"
+                                                            "alignment": "flex-start",
+                                                            "fixedcolsize": "100px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1855,7 +1905,8 @@
                                                             "widget-name": "column-13",
                                                             "is-widget-container": "true",
                                                             "justification": "center",
-                                                            "alignment": "center"
+                                                            "alignment": "center",
+                                                            "fixedcolsize": "30px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1865,8 +1916,15 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "toggleButton-5",
-                                                                    "widget-name": "toggleButton-5"
+                                                                    "widget-id": "toggleButton-OneTime",
+                                                                    "background-color": "",
+                                                                    "background-color-pressed": "",
+                                                                    "widget-name": "toggleButton-OneTime",
+                                                                    "pressed-expression": "onChangePersist(0);",
+                                                                    "src": "Icons/ic_checked.png",
+                                                                    "srcnotpressed": "Icons/ic_unchecked.png",
+                                                                    "width": "24px",
+                                                                    "height": "24px"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1909,9 +1967,10 @@
                                                             "widget-id": "column-27",
                                                             "widget-name": "column-27",
                                                             "is-widget-container": "true",
-                                                            "class": "label-content",
+                                                            "class": "",
                                                             "justification": "center",
-                                                            "alignment": "center"
+                                                            "alignment": "center",
+                                                            "fixedcolsize": "30px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1921,8 +1980,15 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "toggleButton-6",
-                                                                    "widget-name": "toggleButton-6"
+                                                                    "widget-id": "toggleButton-Repeat",
+                                                                    "background-color": "",
+                                                                    "background-color-pressed": "",
+                                                                    "widget-name": "toggleButton-Repeat",
+                                                                    "pressed-expression": "onChangePersist(1);",
+                                                                    "src": "Icons/ic_checked.png",
+                                                                    "srcnotpressed": "Icons/ic_unchecked.png",
+                                                                    "width": "24px",
+                                                                    "height": "24px"
                                                                   },
                                                                   "name": "twx-toggle-button"
                                                                 }
@@ -1985,8 +2051,7 @@
                                                             "class": "label-content",
                                                             "justification": "center",
                                                             "alignment": "flex-start",
-                                                            "fixedcolsize": "",
-                                                            "padding": "0px 0px 0px 10px"
+                                                            "fixedcolsize": "100px"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
