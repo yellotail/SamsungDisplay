@@ -20,6 +20,7 @@ $scope.OnRegister = function() {
 }
 
 $scope.checklist = {
+    currentIndex: -1,
     currentCategory: -1,
     currentItem: -1,
     currentContent: -1,
@@ -110,7 +111,7 @@ function getWidget(widgetName) {
     let widget = $scope.view.wdg[widgetName];
     return widget;
 }
-function SetWidgetVisible(widgetName, visible) {
+function setWidgetVisible(widgetName, visible) {
     let widget = getWidget(widgetName, visible);
     if (widget) {
         widget['visible'] = visible;
@@ -126,6 +127,13 @@ function hideWidget(widget) {
         widget['visible'] = false;
     }
 }
+function setText(widgetName, text) {
+    let widget = getWidget(widgetName);
+    if (widget) {
+        widget['text'] = text;
+    }
+}
+
 
 // 드랍다운
 angular.element(document).ready(function () {
@@ -172,29 +180,42 @@ $scope.onChangeContent = function () {
 }
 
 // 메인메뉴
-$scope.clickRegList = function () {
+$scope.openRegList = function () {
     let widget = getWidget($scope.reglist);
     if (widget) {
-        SetWidgetVisible($scope.toolbar, false);
+        setWidgetVisible($scope.toolbar, false);
         showWidget(widget);
     }
 }
 
-$scope.clickListView = function () {
+$scope.openListView = function () {
     let widget = getWidget($scope.listview);
     if (widget) {
-        SetWidgetVisible($scope.toolbar, false);
+        setWidgetVisible($scope.toolbar, false);
         showWidget(widget);
 
     }
 }
 
 // 등록
+function registerNewList() {
+
+}
+
+$scope.addRegList = function() {
+    let widget = getWidget($scope.reglist);
+    if (widget) {
+        registerNewList();
+        hideWidget(widget);
+        setWidgetVisible($scope.toolbar, true);
+    }
+}
+
 $scope.cancelRegList = function () {
     let widget = getWidget($scope.reglist);
     if (widget) {
         hideWidget(widget);
-        SetWidgetVisible($scope.toolbar, true);
+        setWidgetVisible($scope.toolbar, true);
     }
 }
 
@@ -241,6 +262,32 @@ $scope.closeListView = function () {
 
     if (widget) {
         hideWidget(widget);
-        SetWidgetVisible($scope.toolbar, true);
+        setWidgetVisible($scope.toolbar, true);
     }
+}
+
+$scope.clickListViewRow = function(index) {
+    $scope.checklist.currentIndex = index;
+    
+}
+$scope.showPrevPicture = function(index) {    
+    let NGList = $scope.app.mdl.Samsung_Display_NG.properties.NGList[index];
+    let picture = NGList.beforeAction;    
+    $scope.view.wdg['image-imageView']['imgsrc'] =  'data:image/png;base64,' + picture;
+
+    setText('label-imageViewTitle', '조치 전 사진');
+    setWidgetVisible('popup-imageView', true);
+}
+
+$scope.showCurrPicture = function(index) {
+    let NGList = $scope.app.mdl.Samsung_Display_NG.properties.NGList[index];
+    let picture = NGList.afterAction;    
+    $scope.view.wdg['image-imageView']['imgsrc'] =  'data:image/png;base64,' + picture;
+
+    setText('label-imageViewTitle', '조치 후 사진');
+    setWidgetVisible('popup-imageView', true);
+}
+
+$scope.closeImageView = function() {
+    setWidgetVisible('popup-imageView', false);
 }
