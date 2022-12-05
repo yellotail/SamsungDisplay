@@ -6,14 +6,12 @@
   ],
   "experiences": [
     {
-      "vumark": "50056:1",
-      "experienceType": "vumark",
+      "vumark": "",
+      "experienceType": "none",
       "id": 1,
-      "index-keys": [
-        "urn:vuforia:vumark:50056:1"
-      ],
+      "index-keys": [],
       "title": {
-        "en": "SamsungDisplay"
+        "en": "SD_PTC"
       },
       "description": {
         "en": "",
@@ -25,9 +23,10 @@
       "tags": [],
       "icon": "",
       "viewName": "Home",
-      "url-template": "index.html?expId=1&vumark={{vuforia:vumark}}",
+      "url-template": "index.html?expId=1",
       "entryPoint": "index.html?expId=1",
-      "thumbnail": ""
+      "thumbnail": "",
+      "thingTemplateName": ""
     }
   ],
   "widgetsUsage": [
@@ -76,11 +75,60 @@
       }
     },
     {
-      "timestamp": "2022-12-02T05:17:19.410Z",
+      "timestamp": "2022-12-02T14:40:59.390Z",
+      "action": "PUBLISH",
+      "usage": {
+        "twx-view": 1,
+        "twx-dt-view": 1,
+        "twx-overlay": 1,
+        "twx-overlay-container": 5,
+        "twx-overlay-body": 1,
+        "twx-dt-picture": 1,
+        "twx-popup": 3,
+        "twx-gridlayout": 5,
+        "twx-row": 18,
+        "twx-col": 55,
+        "twx-button": 5,
+        "twx-label": 32,
+        "twx-repeater": 1,
+        "twx-image2": 3,
+        "twx-select": 3,
+        "twx-textarea": 2,
+        "twx-toggle-button": 6
+      }
+    },
+    {
+      "timestamp": "2022-12-02T17:46:38.009Z",
+      "action": "PUBLISH",
+      "usage": {
+        "twx-view": 1,
+        "twx-dt-view": 1,
+        "txw-markupcoe": 1,
+        "twx-dt-picture": 1,
+        "twx-overlay": 1,
+        "twx-overlay-container": 5,
+        "twx-image2": 4,
+        "twx-button": 6,
+        "twx-overlay-body": 1,
+        "twx-popup": 3,
+        "twx-gridlayout": 5,
+        "twx-row": 18,
+        "twx-col": 55,
+        "twx-label": 32,
+        "twx-repeater": 1,
+        "twx-select": 3,
+        "twx-textarea": 2,
+        "twx-toggle-button": 6
+      }
+    },
+    {
+      "timestamp": "2022-12-05T06:05:05.383Z",
       "action": "LATEST_SAVE",
       "usage": {
         "twx-view": 1,
         "twx-dt-view": 1,
+        "txw-markupcoe": 1,
+        "twx-dt-picture": 1,
         "twx-overlay": 1,
         "twx-overlay-container": 5,
         "twx-overlay-body": 1,
@@ -91,7 +139,7 @@
         "twx-button": 5,
         "twx-label": 32,
         "twx-repeater": 1,
-        "twx-image2": 3,
+        "twx-image2": 4,
         "twx-select": 3,
         "twx-textarea": 2,
         "twx-toggle-button": 6

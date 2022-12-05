@@ -3,6 +3,22 @@ $scope.toolbar = 'popup-toolbar';
 $scope.reglist = 'popup-reglist';
 $scope.listview = 'popup-listview';
 
+window.category = null;
+window.item = null;
+window.content = null;
+
+$scope.OnRegister = function() {
+  	twx.app.fn.triggerDataService('Samsung_Display_NG','add',{
+      'analysis':window.category,
+      'item':window.item,
+      'contents':window.content,
+      'persistence':'',
+      'rating':'',
+      'status':'',
+      'beforeAction':$scope.app.params["photo"]
+  	});  
+}
+
 $scope.checklist = {
     currentCategory: -1,
     currentItem: -1,
@@ -58,7 +74,7 @@ $scope.checklist = {
             ],
             // 관리 시트 점검
             [
-                { value: 0, display: "0_2 설비 점검 관리 Check 점검 (제출 후 설비 비교 점검 진행)", desc: "" },
+                { value: 1, display: "0_2 설비 점검 관리 Check 점검 (제출 후 설비 비교 점검 진행)", desc: "" },
             ]
         ],
         // 체결
@@ -121,34 +137,38 @@ $scope.onChangeCategory = function () {
     $scope.checklist.currentCategory = category;
     $scope.checklist.currentItem = -1;
     $scope.checklist.currentContent = -1;
-
+  	window.category = $scope.checklist.categories[$scope.checklist.currentCategory].display;
+  
     let dropdownItem = getWidget('dropdown-item');
-
     dropdownItem.value = '';
     dropdownItem.list = $scope.checklist.items[category];
+  	window.item = null;
 
     let dropdownContent = getWidget('dropdown-content');
     if (dropdownContent) {
         dropdownContent.value = '';
         dropdownContent.list = null;
     }
+	window.content = null;
 }
 
 $scope.onChangeItem = function () {
     let item = $scope.view.wdg["dropdown-item"].value;
     $scope.checklist.currentItem = item;
     $scope.checklist.currentContent = -1;
-
+	window.item = $scope.checklist.items[$scope.checklist.currentCategory][$scope.checklist.currentItem].display;
     console.dir($scope.checklist);
 
     let dropdownContent = getWidget('dropdown-content');
     dropdownContent.value = '';
     dropdownContent.list = $scope.checklist.contents[$scope.checklist.currentCategory][$scope.checklist.currentItem];
+  	window.content = null;
 }
 
 $scope.onChangeContent = function () {
     let content = $scope.view.wdg["dropdown-content"].value;
     $scope.checklist.currentContent = content;
+  	window.content = $scope.checklist.contents[$scope.checklist.currentCategory][$scope.checklist.currentItem][$scope.checklist.currentContent].display;
 }
 
 // 메인메뉴

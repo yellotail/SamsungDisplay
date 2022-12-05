@@ -29,17 +29,35 @@
         },
         {
           "attributes": {
-            "name": "getNGList",
-            "id": "getNGList"
+            "name": "getList",
+            "id": "getList",
+            "auto-refresh": "30",
+            "on-app-load": ""
           },
           "name": "twx-model-service"
         },
         {
           "attributes": {
-            "name": "addNG",
-            "id": "addNG"
+            "name": "GetPropertyValues",
+            "id": "GetPropertyValues"
           },
           "name": "twx-model-service"
+        },
+        {
+          "attributes": {
+            "name": "add",
+            "id": "add"
+          },
+          "name": "twx-model-service",
+          "children": [
+            {
+              "attributes": {
+                "name": "index",
+                "value": ""
+              },
+              "name": "twx-service-parameter-value"
+            }
+          ]
         }
       ]
     },
@@ -72,6 +90,41 @@
         "value": ""
       },
       "name": "twx-app-param"
+    },
+    {
+      "attributes": {
+        "id": "photo",
+        "isbound": "false",
+        "isdeletable": "true",
+        "name": "photo",
+        "value": ""
+      },
+      "name": "twx-app-param",
+      "children": [
+        {
+          "attributes": {
+            "databind-id": "db-1670220096243",
+            "source-type": "ui",
+            "source-label": "Markup COE",
+            "source-name": "markupCoe-1",
+            "source-item-type": "property",
+            "source-item-name": "markedup",
+            "binding-type": "widget_property",
+            "from-expression": "app.view['Home'].wdg['markupCoe-1']['markedup']",
+            "to-property": "app.params['photo']"
+          },
+          "name": "twx-databind",
+          "children": [
+            {
+              "attributes": {
+                "filter-id": "df-1670220132863",
+                "filter-body": "return value.slice(22);"
+              },
+              "name": "twx-data-filter"
+            }
+          ]
+        }
+      ]
     }
   ],
   "name": "twx-app-mdl"

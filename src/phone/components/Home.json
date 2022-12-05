@@ -20,7 +20,58 @@
           "name": "twx-dt-view",
           "children": [
             {
-              "name": "twx-container-content"
+              "name": "twx-container-content",
+              "children": [
+                {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "markupCoe-1",
+                    "widget-name": "markupCoe-1"
+                  },
+                  "name": "txw-markupcoe",
+                  "children": [
+                    {
+                      "attributes": {
+                        "databind-id": "db-1670002582934",
+                        "source-type": "ui",
+                        "source-label": "카메라",
+                        "source-name": "camera-1",
+                        "source-item-type": "property",
+                        "source-item-name": "imageUrl",
+                        "binding-type": "widget_property",
+                        "from-expression": "app.view['Home'].wdg['camera-1']['imageUrl']",
+                        "to-property": "markup"
+                      },
+                      "name": "twx-databind"
+                    }
+                  ]
+                },
+                {
+                  "attributes": {
+                    "twx-widget": "",
+                    "widget-id": "camera-1",
+                    "is-augmentations-hidden": "false",
+                    "widget-name": "camera-1"
+                  },
+                  "name": "twx-dt-picture",
+                  "children": [
+                    {
+                      "attributes": {
+                        "eventbind-id": "eb-1670002576157",
+                        "source-type": "widget",
+                        "source-label": "카메라",
+                        "source-name": "camera-1",
+                        "source-event": "pictureTaken",
+                        "handler-type": "ui",
+                        "handler-name": "markupCoe-1",
+                        "handler-service": "start",
+                        "handler-path": "app.view[\"Home\"].wdg[\"markupCoe-1\"].svc.start"
+                      },
+                      "name": "twx-eventbind"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -648,13 +699,13 @@
                                           "children": [
                                             {
                                               "attributes": {
-                                                "databind-id": "db-1669871328709",
+                                                "databind-id": "db-1669973542702",
                                                 "source-type": "data",
                                                 "source-name": "Samsung_Display_NG",
-                                                "source-item-type": "property",
-                                                "source-item-name": "NGList",
-                                                "binding-type": "property_field",
-                                                "from-expression": "app.mdl['Samsung_Display_NG'].properties['NGList']",
+                                                "source-item-type": "service",
+                                                "source-item-name": "getList",
+                                                "binding-type": "collection",
+                                                "from-expression": "app.mdl['Samsung_Display_NG'].svc['getList'].data",
                                                 "to-property": "data"
                                               },
                                               "name": "twx-databind"
@@ -918,10 +969,36 @@
                                                                             "twx-widget": "",
                                                                             "widget-id": "image-1",
                                                                             "widget-name": "image-1",
-                                                                            "class": "",
-                                                                            "imgsrc": "Icons/ic_image.svg"
+                                                                            "class": "{{item.item}}",
+                                                                            "width": "50px",
+                                                                            "height": "50px"
                                                                           },
-                                                                          "name": "twx-image2"
+                                                                          "name": "twx-image2",
+                                                                          "children": [
+                                                                            {
+                                                                              "attributes": {
+                                                                                "databind-id": "db-1669973558714",
+                                                                                "source-type": "data",
+                                                                                "source-name": "Samsung_Display_NG",
+                                                                                "source-item-type": "service",
+                                                                                "source-item-name": "getList",
+                                                                                "source-item-field-name": "beforeAction",
+                                                                                "binding-type": "collection_item_field",
+                                                                                "from-expression": "item['beforeAction']",
+                                                                                "to-property": "imgsrc"
+                                                                              },
+                                                                              "name": "twx-databind",
+                                                                              "children": [
+                                                                                {
+                                                                                  "attributes": {
+                                                                                    "filter-id": "df-1669973598886",
+                                                                                    "filter-body": "return 'data:image/png;base64,' + value;"
+                                                                                  },
+                                                                                  "name": "twx-data-filter"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
                                                                         }
                                                                       ]
                                                                     }
@@ -949,9 +1026,35 @@
                                                                             "widget-id": "image-2",
                                                                             "widget-name": "image-2",
                                                                             "class": "",
-                                                                            "imgsrc": "Icons/ic_image.svg"
+                                                                            "width": "50px",
+                                                                            "height": "50px"
                                                                           },
-                                                                          "name": "twx-image2"
+                                                                          "name": "twx-image2",
+                                                                          "children": [
+                                                                            {
+                                                                              "attributes": {
+                                                                                "databind-id": "db-1669973607685",
+                                                                                "source-type": "data",
+                                                                                "source-name": "Samsung_Display_NG",
+                                                                                "source-item-type": "service",
+                                                                                "source-item-name": "getList",
+                                                                                "source-item-field-name": "afterAction",
+                                                                                "binding-type": "collection_item_field",
+                                                                                "from-expression": "item['afterAction']",
+                                                                                "to-property": "imgsrc"
+                                                                              },
+                                                                              "name": "twx-databind",
+                                                                              "children": [
+                                                                                {
+                                                                                  "attributes": {
+                                                                                    "filter-id": "df-1669973677962",
+                                                                                    "filter-body": "return 'data:image/png;base64,' + value;"
+                                                                                  },
+                                                                                  "name": "twx-data-filter"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ]
                                                                         }
                                                                       ]
                                                                     }
@@ -1473,7 +1576,23 @@
                                                                                             "widget-name": "image-3",
                                                                                             "imgsrc": "Icons/ic_photo.svg"
                                                                                           },
-                                                                                          "name": "twx-image2"
+                                                                                          "name": "twx-image2",
+                                                                                          "children": [
+                                                                                            {
+                                                                                              "attributes": {
+                                                                                                "eventbind-id": "eb-1670203333227",
+                                                                                                "source-type": "widget",
+                                                                                                "source-label": "이미지",
+                                                                                                "source-name": "image-3",
+                                                                                                "source-event": "click",
+                                                                                                "handler-type": "ui",
+                                                                                                "handler-name": "camera-1",
+                                                                                                "handler-service": "takePicture",
+                                                                                                "handler-path": "app.view[\"Home\"].wdg[\"camera-1\"].svc.takePicture"
+                                                                                              },
+                                                                                              "name": "twx-eventbind"
+                                                                                            }
+                                                                                          ]
                                                                                         }
                                                                                       ]
                                                                                     }
@@ -1547,7 +1666,35 @@
                                                           "name": "twx-col",
                                                           "children": [
                                                             {
-                                                              "name": "twx-container-content"
+                                                              "name": "twx-container-content",
+                                                              "children": [
+                                                                {
+                                                                  "attributes": {
+                                                                    "twx-widget": "",
+                                                                    "widget-id": "image-5",
+                                                                    "widget-name": "image-5",
+                                                                    "width": "50px",
+                                                                    "height": "30px"
+                                                                  },
+                                                                  "name": "twx-image2",
+                                                                  "children": [
+                                                                    {
+                                                                      "attributes": {
+                                                                        "databind-id": "db-1670220300783",
+                                                                        "source-type": "ui",
+                                                                        "source-label": "Markup COE",
+                                                                        "source-name": "markupCoe-1",
+                                                                        "source-item-type": "property",
+                                                                        "source-item-name": "markedup",
+                                                                        "binding-type": "widget_property",
+                                                                        "from-expression": "app.view['Home'].wdg['markupCoe-1']['markedup']",
+                                                                        "to-property": "imgsrc"
+                                                                      },
+                                                                      "name": "twx-databind"
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
                                                             }
                                                           ]
                                                         }
@@ -2130,6 +2277,7 @@
                                                                     "twx-widget": "",
                                                                     "widget-id": "button-1",
                                                                     "widget-name": "button-1",
+                                                                    "click-expression": "OnRegister();",
                                                                     "text": "등록",
                                                                     "class": "button-register label-content"
                                                                   },

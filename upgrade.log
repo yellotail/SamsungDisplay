@@ -44,3 +44,25 @@
 [2022-11-30T01:30:32.246Z] debug: [twx-studio:upgrade:SamsungDisplay] buildApp
 [2022-11-30T01:30:32.678Z] debug: [twx-studio:upgrade:SamsungDisplay] END buildApp
 [2022-11-30T01:30:32.678Z] debug: [twx-studio:upgrade:SamsungDisplay] Build succeeded.
+[2022-12-02T07:05:19.289Z] debug: [twx-studio:upgrade:SamsungDisplay] Begin upgrade of project
+[2022-12-02T07:05:19.290Z] info: [twx-studio:upgrade:SamsungDisplay] Upgrading project
+[2022-12-02T07:05:19.294Z] debug: [twx-studio:upgrade:SamsungDisplay] Make sure there are not any stale files lying around
+[2022-12-02T07:05:19.312Z] debug: [twx-studio:upgrade:SamsungDisplay] Merging 
+[2022-12-02T07:05:19.313Z] debug: [twx-studio:upgrade:SamsungDisplay] Original contents of
+[2022-12-02T07:05:19.314Z] debug: [twx-studio:upgrade:SamsungDisplay] Copying /src/**/* to project, overwrite=false
+[2022-12-02T07:05:19.316Z] debug: [twx-studio:upgrade:SamsungDisplay] Copying /**/* to project, skip /src/**/*,  overwrite=true
+[2022-12-02T07:05:19.467Z] debug: [twx-studio:upgrade:SamsungDisplay] Copy of project files complete
+[2022-12-02T07:05:19.468Z] debug: [twx-studio:upgrade:SamsungDisplay] Updating version to 
+[2022-12-02T07:05:19.468Z] debug: [twx-studio:upgrade:SamsungDisplay] onupgrade sucessful, now build the project
+[2022-12-02T07:05:19.468Z] debug: [twx-studio:upgrade:SamsungDisplay] BEGIN buildApp
+[2022-12-02T07:05:19.468Z] debug: [twx-studio:upgrade:SamsungDisplay] write settings
+[2022-12-02T07:05:19.469Z] debug: [twx-studio:upgrade:SamsungDisplay] copy runtime extensions
+[2022-12-02T07:05:21.600Z] debug: [twx-studio:upgrade:SamsungDisplay] packageThemeSet
+[2022-12-02T07:05:22.588Z] debug: [twx-studio:upgrade:SamsungDisplay] onBuild
+[2022-12-02T07:05:22.588Z] info: [twx-studio:upgrade:SamsungDisplay] Building ves-ar-extension app:
+[2022-12-02T07:05:22.608Z] debug: [twx-studio:upgrade:SamsungDisplay] pathDir
+[2022-12-02T07:05:22.608Z] debug: [twx-studio:upgrade:SamsungDisplay] scaffoldDir
+[2022-12-02T07:05:22.608Z] debug: [twx-studio:upgrade:SamsungDisplay] copySrc
+[2022-12-02T07:05:23.279Z] debug: [twx-studio:upgrade:SamsungDisplay] buildApp
+[2022-12-02T07:05:23.812Z] debug: [twx-studio:upgrade:SamsungDisplay] END buildApp
+[2022-12-02T07:05:23.812Z] debug: [twx-studio:upgrade:SamsungDisplay] Build succeeded.
