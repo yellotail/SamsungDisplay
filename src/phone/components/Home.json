@@ -974,15 +974,11 @@
                                                                             "twx-widget": "",
                                                                             "widget-id": "image-1",
                                                                             "widget-name": "image-1",
-<<<<<<< HEAD
                                                                             "class": "{{item.item}}",
                                                                             "width": "50px",
-                                                                            "height": "50px"
-=======
+                                                                            "height": "50px",
                                                                             "click-expression": "showPrevPicture($index);",
-                                                                            "class": "",
                                                                             "imgsrc": "Icons/ic_image.svg"
->>>>>>> 8113e6b478d02d7eec547a7f96508304b1539db0
                                                                           },
                                                                           "name": "twx-image2",
                                                                           "children": [
