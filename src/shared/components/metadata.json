@@ -83,22 +83,12 @@
         "twx-overlay": 1,
         "twx-overlay-container": 5,
         "twx-overlay-body": 1,
-<<<<<<< HEAD
-        "twx-dt-picture": 1,
-        "twx-popup": 3,
-        "twx-gridlayout": 5,
-        "twx-row": 18,
-        "twx-col": 55,
-        "twx-button": 5,
-        "twx-label": 32,
-=======
         "twx-popup": 4,
         "twx-gridlayout": 6,
         "twx-row": 20,
         "twx-col": 58,
         "twx-button": 6,
         "twx-label": 33,
->>>>>>> 8113e6b478d02d7eec547a7f96508304b1539db0
         "twx-repeater": 1,
         "twx-image2": 4,
         "twx-select": 3,
