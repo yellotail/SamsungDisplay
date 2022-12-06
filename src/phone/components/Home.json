@@ -760,7 +760,7 @@
                                                                             "widget-id": "label-25",
                                                                             "state-format-value": "text",
                                                                             "widget-name": "label-25",
-                                                                            "click-expression": "clickListViewRow($index);",
+                                                                            "click-expression": "openModList($index);",
                                                                             "text": "{{item.analysis}}"
                                                                           },
                                                                           "name": "twx-label"
@@ -791,7 +791,7 @@
                                                                             "widget-id": "label-26",
                                                                             "state-format-value": "text",
                                                                             "widget-name": "label-26",
-                                                                            "click-expression": "clickListViewRow($index);",
+                                                                            "click-expression": "openModList($index);",
                                                                             "text": "{{item.item}}"
                                                                           },
                                                                           "name": "twx-label"
@@ -822,7 +822,7 @@
                                                                             "widget-id": "label-27",
                                                                             "state-format-value": "text",
                                                                             "widget-name": "label-27",
-                                                                            "click-expression": "clickListViewRow($index);",
+                                                                            "click-expression": "openModList($index);",
                                                                             "text": "{{item.contents}}"
                                                                           },
                                                                           "name": "twx-label"
@@ -853,7 +853,7 @@
                                                                             "widget-id": "label-28",
                                                                             "state-format-value": "text",
                                                                             "widget-name": "label-28",
-                                                                            "click-expression": "clickListViewRow($index);",
+                                                                            "click-expression": "openModList($index);",
                                                                             "text": "{{item.status}}"
                                                                           },
                                                                           "name": "twx-label"
@@ -974,11 +974,11 @@
                                                                             "twx-widget": "",
                                                                             "widget-id": "image-1",
                                                                             "widget-name": "image-1",
-                                                                            "class": "{{item.item}}",
-                                                                            "width": "50px",
-                                                                            "height": "50px",
                                                                             "click-expression": "showPrevPicture($index);",
-                                                                            "imgsrc": "Icons/ic_image.svg"
+                                                                            "class": "{{item.item}}",
+                                                                            "imgsrc": "Icons/ic_image.svg",
+                                                                            "width": "40px",
+                                                                            "height": "40px"
                                                                           },
                                                                           "name": "twx-image2",
                                                                           "children": [
@@ -1034,8 +1034,9 @@
                                                                             "widget-name": "image-2",
                                                                             "click-expression": "showCurrPicture($index);",
                                                                             "class": "",
-                                                                            "width": "50px",
-                                                                            "height": "50px"
+                                                                            "imgsrc": "Icons/ic_image.svg",
+                                                                            "width": "40px",
+                                                                            "height": "40px"
                                                                           },
                                                                           "name": "twx-image2",
                                                                           "children": [
@@ -1319,9 +1320,9 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "label-1",
+                                                                    "widget-id": "label-reglist-title",
                                                                     "state-format-value": "text",
-                                                                    "widget-name": "label-1",
+                                                                    "widget-name": "label-reglist-title",
                                                                     "text": "불합리 등록"
                                                                   },
                                                                   "name": "twx-label"
@@ -1633,8 +1634,8 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "textArea-1",
-                                                                    "widget-name": "textArea-1",
+                                                                    "widget-id": "textArea-status",
+                                                                    "widget-name": "textArea-status",
                                                                     "class": "textArea-issue",
                                                                     "rows": "5",
                                                                     "maxlength": "",
@@ -1824,7 +1825,9 @@
                                                             "twx-widget": "",
                                                             "widget-id": "column-15",
                                                             "widget-name": "column-15",
-                                                            "is-widget-container": "true"
+                                                            "is-widget-container": "true",
+                                                            "justification": "center",
+                                                            "alignment": "center"
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -1837,7 +1840,8 @@
                                                                     "widget-id": "image-5",
                                                                     "widget-name": "image-5",
                                                                     "width": "50px",
-                                                                    "height": "30px"
+                                                                    "height": "30px",
+                                                                    "visible": "false"
                                                                   },
                                                                   "name": "twx-image2",
                                                                   "children": [
@@ -2388,7 +2392,9 @@
                                                             "widget-id": "column-30",
                                                             "widget-name": "column-30",
                                                             "is-widget-container": "true",
-                                                            "class": "textArea-grade"
+                                                            "class": "",
+                                                            "justification": "center",
+                                                            "padding": ""
                                                           },
                                                           "name": "twx-col",
                                                           "children": [
@@ -2398,10 +2404,15 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "textArea-2",
-                                                                    "widget-name": "textArea-2"
+                                                                    "widget-id": "textInput-rating",
+                                                                    "input-type": "number",
+                                                                    "max-value": "100",
+                                                                    "widget-name": "textInput-rating",
+                                                                    "class": "textInput-rating",
+                                                                    "placeholder": "100",
+                                                                    "label": "Input Label"
                                                                   },
-                                                                  "name": "twx-textarea"
+                                                                  "name": "twx-text-input"
                                                                 }
                                                               ]
                                                             }
@@ -2438,9 +2449,9 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "button-1",
-                                                                    "widget-name": "button-1",
-                                                                    "click-expression": "OnRegister();",
+                                                                    "widget-id": "button-reglist-ok",
+                                                                    "widget-name": "button-reglist-ok",
+                                                                    "click-expression": "onRegister();",
                                                                     "text": "등록",
                                                                     "class": "button-register label-content"
                                                                   },
@@ -2467,7 +2478,7 @@
                                                                     "twx-widget": "",
                                                                     "widget-id": "button-2",
                                                                     "widget-name": "button-2",
-                                                                    "click-expression": "cancelRegList();",
+                                                                    "click-expression": "cancelRegister();",
                                                                     "text": "취소",
                                                                     "class": "button-cancel label-content"
                                                                   },
