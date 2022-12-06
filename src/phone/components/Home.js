@@ -289,8 +289,10 @@ $scope.openRegList = function () {
     let widget = getWidgetByName($scope.reglist);
     if (widget) {
         initPopup(-1);
-        setWidgetVisible($scope.toolbar, false);
+
         showWidget(widget);
+        setWidgetVisible($scope.toolbar, false);
+        
     }
 }
 
@@ -301,8 +303,11 @@ $scope.openModList = function (index) {
     if (widget) {
         initPopup(index);
         fillModList(index);
-        setWidgetVisible($scope.toolbar, false);
+        
         showWidget(widget);
+        setWidgetVisible($scope.toolbar, false);
+        setWidgetVisible($scope.listview, false);
+        
     }
 }
 
@@ -323,17 +328,24 @@ function registerNewList() {
     let persist = $scope.checklist.currentPersist != 0 ? true : false;
     let photo = $scope.app.params.photo;
 
-    twx.app.fn.triggerDataService('Samsung_Display_NG', 'add',
-        {
-            'analysis': window.category,
-            'item': window.item,
-            'contents': window.content,
-            'status': status,
-            'rating': grade,
-            'persistence': persist,
-            'score': score,
-            'beforeAction': photo
-        });
+    var newList =  {
+        'analysis': window.category,
+        'item': window.item,
+        'contents': window.content,
+        'status': status,
+        'rating': grade,
+        'persistence': persist,
+        'score': score,        
+    };
+    if ($scope.checklist.currentIndex >= 0) {
+        newList.index = $scope.checklist.currentIndex;
+        newList.afterAction = photo;        
+    }
+    else {
+        newList.beforeAction = photo;
+    }
+    console.dir(newList);
+    twx.app.fn.triggerDataService('Samsung_Display_NG', 'addNG', newList);
 }
 
 $scope.onRegister = function () {
