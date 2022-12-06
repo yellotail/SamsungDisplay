@@ -58,6 +58,13 @@
               "name": "twx-service-parameter-value"
             }
           ]
+        },
+        {
+          "attributes": {
+            "name": "addNG",
+            "id": "addNG"
+          },
+          "name": "twx-model-service"
         }
       ]
     },

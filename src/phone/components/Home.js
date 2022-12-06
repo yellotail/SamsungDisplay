@@ -7,18 +7,6 @@ window.category = null;
 window.item = null;
 window.content = null;
 
-$scope.OnRegister = function() {
-  	twx.app.fn.triggerDataService('Samsung_Display_NG','add',{
-      'analysis':window.category,
-      'item':window.item,
-      'contents':window.content,
-      'persistence':'',
-      'rating':'',
-      'status':'',
-      'beforeAction':$scope.app.params["photo"]
-  	});  
-}
-
 $scope.checklist = {
     currentIndex: -1,
     currentCategory: -1,
@@ -100,19 +88,67 @@ $scope.checklist = {
                 { value: 2, display: "1_15 틀어짐 방지 보호 Cover 장착", desc: "" },
             ],
         ]
-    ]
+    ],
+
+    getIndexByCategoryName: function (displayName) {
+        for (var i = 0; i < this.categories.length; i++) {
+            let category = this.categories[i];
+            if (category.display == displayName) {
+                return i;
+            }
+        }
+        return -1;
+    },
+    getIndexByItemName: function (category, displayName) {
+        if (category >= 0) {
+            for (var i = 0; i < this.items[category].length; i++) {
+                let item = this.items[category][i];
+                if (item.display == displayName) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    },
+    getIndexByContentName: function (category, item, displayName) {
+        if (category >= 0 && item >= 0) {
+            for (var i = 0; i < this.contents[category][item].length; i++) {
+                let content = this.contents[category][item][i];
+                if (content.display == displayName) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    },
+    getIndexByGrade: function (grade) {
+        for (var i = 0; i < this.grades.length; i++) {
+            if (this.grades[i] == grade) {
+                return i;
+            }
+        }
+        return -1;
+    },
+    getIndexByPersist: function (persist) {
+        if (persist) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
 };
 
 // Common
 // Clamp number between two values with the following line:
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
-function getWidget(widgetName) {
+function getWidgetByName(widgetName) {
     let widget = $scope.view.wdg[widgetName];
     return widget;
 }
 function setWidgetVisible(widgetName, visible) {
-    let widget = getWidget(widgetName, visible);
+    let widget = getWidgetByName(widgetName, visible);
     if (widget) {
         widget['visible'] = visible;
     }
@@ -127,17 +163,37 @@ function hideWidget(widget) {
         widget['visible'] = false;
     }
 }
-function setText(widgetName, text) {
-    let widget = getWidget(widgetName);
+function setWidgetText(widgetName, text) {
+    let widget = getWidgetByName(widgetName);
     if (widget) {
         widget['text'] = text;
     }
 }
 
+function selectDropdown(widgetName, value) {
+    let widget = getWidgetByName(widgetName);
+    if (widget) {
+        let newValue = value >= 0 ? ('' + value) : ''
+        widget['value'] = newValue;
+    }
+}
+
+function initPhotoPreview() {    
+
+    let widget = getWidgetByName('image-photoPreview');
+    if (widget) {  
+       let markup = getWidgetByName('markupCoe-1');
+        console.dir(markup);
+        
+        // $scope.app.params.photo = undefined;        
+        // markup['markedup'] = undefined;
+        // widget['imgsrc'] = undefined;
+    }
+}
 
 // 드랍다운
 angular.element(document).ready(function () {
-    $scope.view.wdg["dropdown-category"].list = $scope.checklist.categories;
+    $scope.view.wdg['dropdown-category'].list = $scope.checklist.categories;
 });
 
 $scope.onChangeCategory = function () {
@@ -145,65 +201,155 @@ $scope.onChangeCategory = function () {
     $scope.checklist.currentCategory = category;
     $scope.checklist.currentItem = -1;
     $scope.checklist.currentContent = -1;
-  	window.category = $scope.checklist.categories[$scope.checklist.currentCategory].display;
-  
-    let dropdownItem = getWidget('dropdown-item');
+    window.category = $scope.checklist.categories[$scope.checklist.currentCategory].display;
+
+    let dropdownItem = getWidgetByName('dropdown-item');
     dropdownItem.value = '';
     dropdownItem.list = $scope.checklist.items[category];
-  	window.item = null;
+    window.item = null;
 
-    let dropdownContent = getWidget('dropdown-content');
+    let dropdownContent = getWidgetByName('dropdown-content');
     if (dropdownContent) {
         dropdownContent.value = '';
         dropdownContent.list = null;
     }
-	window.content = null;
+    window.content = null;
 }
 
 $scope.onChangeItem = function () {
     let item = $scope.view.wdg["dropdown-item"].value;
     $scope.checklist.currentItem = item;
     $scope.checklist.currentContent = -1;
-	window.item = $scope.checklist.items[$scope.checklist.currentCategory][$scope.checklist.currentItem].display;
-    console.dir($scope.checklist);
+    window.item = $scope.checklist.items[$scope.checklist.currentCategory][$scope.checklist.currentItem].display;
 
-    let dropdownContent = getWidget('dropdown-content');
+    let dropdownContent = getWidgetByName('dropdown-content');
     dropdownContent.value = '';
     dropdownContent.list = $scope.checklist.contents[$scope.checklist.currentCategory][$scope.checklist.currentItem];
-  	window.content = null;
+    window.content = null;
+
 }
 
 $scope.onChangeContent = function () {
     let content = $scope.view.wdg["dropdown-content"].value;
+    console.log('content: ' + content);
     $scope.checklist.currentContent = content;
-  	window.content = $scope.checklist.contents[$scope.checklist.currentCategory][$scope.checklist.currentItem][$scope.checklist.currentContent].display;
+    window.content = $scope.checklist.contents[$scope.checklist.currentCategory][$scope.checklist.currentItem][$scope.checklist.currentContent].display;
 }
 
 // 메인메뉴
+function initPopup(index) {
+    let title = (index < 0) ? '불합리 등록' : '불합리 수정';
+    setWidgetText('label-reglist-title', title);
+
+    let button = (index < 0) ? '등록' : '수정';
+    setWidgetText('button-reglist-ok', button);
+
+    selectDropdown('dropdown-category', -1);
+    selectDropdown('dropdown-item', -1);
+    selectDropdown('dropdown-content', -1);
+
+    setWidgetText('textArea-status', '');
+
+    $scope.onChangeGrade(-1);
+    $scope.onChangePersist(-1);
+
+    setWidgetText('textInput-rating', undefined);
+    initPhotoPreview();
+}
+
+function fillModList(index) {
+    let NGList = $scope.app.mdl.Samsung_Display_NG.properties.NGList[index];
+
+    let category = $scope.checklist.getIndexByCategoryName(NGList.analysis);
+    selectDropdown('dropdown-category', category);
+    $scope.onChangeCategory();
+
+    let item = $scope.checklist.getIndexByItemName(category, NGList.item);
+    selectDropdown('dropdown-item', item);
+    $scope.onChangeItem();
+
+    let content = $scope.checklist.getIndexByContentName(category, item, NGList.contents);
+    selectDropdown('dropdown-content', content);
+    $scope.onChangeContent();
+
+    setWidgetText('textArea-status', NGList.status);
+
+    let grade = $scope.checklist.getIndexByGrade(NGList.rating);
+    $scope.onChangeGrade(grade);
+
+    let persist = $scope.checklist.getIndexByPersist(NGList.persistence);
+    $scope.onChangePersist(persist);
+
+    setWidgetText('textInput-rating', NGList.score);
+}
+
 $scope.openRegList = function () {
-    let widget = getWidget($scope.reglist);
+    $scope.checklist.currentIndex = -1;
+
+    let widget = getWidgetByName($scope.reglist);
     if (widget) {
-        setWidgetVisible($scope.toolbar, false);
+        initPopup(-1);
+
         showWidget(widget);
+        setWidgetVisible($scope.toolbar, false);
+        
+    }
+}
+
+$scope.openModList = function (index) {
+    $scope.checklist.currentIndex = index;
+
+    let widget = getWidgetByName($scope.reglist);
+    if (widget) {
+        initPopup(index);
+        fillModList(index);
+        
+        showWidget(widget);
+        setWidgetVisible($scope.toolbar, false);
+        setWidgetVisible($scope.listview, false);
+        
     }
 }
 
 $scope.openListView = function () {
-    let widget = getWidget($scope.listview);
+    let widget = getWidgetByName($scope.listview);
     if (widget) {
         setWidgetVisible($scope.toolbar, false);
         showWidget(widget);
-
     }
 }
 
+
 // 등록
 function registerNewList() {
+    let status = getStatus();
+    let grade = getGradeID($scope.checklist.currentGrade);
+    let score = getRating();
+    let persist = $scope.checklist.currentPersist != 0 ? true : false;
+    let photo = $scope.app.params.photo;
 
+    var newList =  {
+        'analysis': window.category,
+        'item': window.item,
+        'contents': window.content,
+        'status': status,
+        'rating': grade,
+        'persistence': persist,
+        'score': score,        
+    };
+    if ($scope.checklist.currentIndex >= 0) {
+        newList.index = $scope.checklist.currentIndex;
+        newList.afterAction = photo;        
+    }
+    else {
+        newList.beforeAction = photo;
+    }
+    console.dir(newList);
+    twx.app.fn.triggerDataService('Samsung_Display_NG', 'addNG', newList);
 }
 
-$scope.addRegList = function() {
-    let widget = getWidget($scope.reglist);
+$scope.onRegister = function () {
+    let widget = getWidgetByName($scope.reglist);
     if (widget) {
         registerNewList();
         hideWidget(widget);
@@ -211,8 +357,16 @@ $scope.addRegList = function() {
     }
 }
 
-$scope.cancelRegList = function () {
-    let widget = getWidget($scope.reglist);
+$scope.cancelRegister = function () {
+    let widget = getWidgetByName($scope.reglist);
+    if (widget) {
+        hideWidget(widget);
+        setWidgetVisible($scope.toolbar, true);
+    }
+}
+
+$scope.cancelRegister = function () {
+    let widget = getWidgetByName($scope.reglist);
     if (widget) {
         hideWidget(widget);
         setWidgetVisible($scope.toolbar, true);
@@ -223,21 +377,30 @@ function updateToggleButton(toggleName, id) {
     let toggle = $scope.view.wdg[toggleName];
     if (toggle) {
         let widgetName = toggle.widgetName;
-        let tokens = widgetName.split('-');       
+        let tokens = widgetName.split('-');
         let checked = (tokens[tokens.length - 1] == id) ? true : false;
         toggle.pressed = checked;
     }
 }
 
-function getGradeID(index) {
-    let idx = clamp(index, 0, 3);
-    return $scope.checklist.grades[idx];
+function getStatus() {
+    let widget = getWidgetByName('textArea-status');
+    return widget ? widget['text'] : '';
+}
+function getRating() {
+    let widget = getWidgetByName('textInput-rating');
+    return widget ? widget['text'] : '';
 }
 
-$scope.onChangeGrade = function(index) {
+function getGradeID(index) {
+    //let idx = clamp(index, 0, 3);
+    return (index >= 0 && index <= 3) ? $scope.checklist.grades[index] : '';
+}
+
+$scope.onChangeGrade = function (index) {
     $scope.checklist.currentGrade = index;
-    
-    let id = getGradeID(index);    
+
+    let id = getGradeID(index);
     updateToggleButton('toggleButton-A', id);
     updateToggleButton('toggleButton-B', id);
     updateToggleButton('toggleButton-C', id);
@@ -245,10 +408,10 @@ $scope.onChangeGrade = function(index) {
 }
 
 function getPersistID(index) {
-    let idx = clamp(index, 0, 1);
-    return $scope.checklist.persists[idx];
+    //let idx = clamp(index, 0, 1);
+    return (index >= 0 && index <= 1) ? $scope.checklist.persists[index] : '';
 }
-$scope.onChangePersist = function(index) {
+$scope.onChangePersist = function (index) {
     $scope.checklist.currentPersist = index;
 
     let id = getPersistID(index);
@@ -258,7 +421,7 @@ $scope.onChangePersist = function(index) {
 
 // 리스트
 $scope.closeListView = function () {
-    let widget = getWidget($scope.listview);
+    let widget = getWidgetByName($scope.listview);
 
     if (widget) {
         hideWidget(widget);
@@ -266,28 +429,41 @@ $scope.closeListView = function () {
     }
 }
 
-$scope.clickListViewRow = function(index) {
-    $scope.checklist.currentIndex = index;
-    
+$scope.showCapture = function () {
+    if ($scope.app.params.photo) {
+
+        $scope.view.wdg['image-imageView']['imgsrc'] = $scope.app.params.photo;
+        setWidgetText('label-imageViewTitle', '캡쳐 사진');
+
+        setWidgetVisible('popup-imageView', true);
+    }
 }
-$scope.showPrevPicture = function(index) {    
+
+
+$scope.showPrevPicture = function (index) {
     let NGList = $scope.app.mdl.Samsung_Display_NG.properties.NGList[index];
-    let picture = NGList.beforeAction;    
-    $scope.view.wdg['image-imageView']['imgsrc'] =  'data:image/png;base64,' + picture;
+    let picture = NGList.beforeAction;
+    if (picture) {
+        let image = $scope.view.wdg['image-imageView'];
+        image['imgsrc'] = 'data:image/png;base64,' + picture;
 
-    setText('label-imageViewTitle', '조치 전 사진');
-    setWidgetVisible('popup-imageView', true);
+        setWidgetText('label-imageViewTitle', '조치 전 사진');
+        setWidgetVisible('popup-imageView', true);
+    }
 }
 
-$scope.showCurrPicture = function(index) {
+$scope.showCurrPicture = function (index) {
     let NGList = $scope.app.mdl.Samsung_Display_NG.properties.NGList[index];
-    let picture = NGList.afterAction;    
-    $scope.view.wdg['image-imageView']['imgsrc'] =  'data:image/png;base64,' + picture;
+    let picture = NGList.afterAction;
+    if (picture) {
+        let image = $scope.view.wdg['image-imageView'];        
+        image['imgsrc'] = 'data:image/png;base64,' + picture;
 
-    setText('label-imageViewTitle', '조치 후 사진');
-    setWidgetVisible('popup-imageView', true);
+        setWidgetText('label-imageViewTitle', '조치 후 사진');
+        setWidgetVisible('popup-imageView', true);        
+    }
 }
 
-$scope.closeImageView = function() {
+$scope.closeImageView = function () {
     setWidgetVisible('popup-imageView', false);
 }
