@@ -178,6 +178,18 @@ function selectDropdown(widgetName, value) {
     }
 }
 
+function initPhotoPreview() {    
+
+    let widget = getWidgetByName('image-photoPreview');
+    if (widget) {  
+       let markup = getWidgetByName('markupCoe-1');
+        console.dir(markup);
+        
+        // $scope.app.params.photo = undefined;        
+        // markup['markedup'] = undefined;
+        // widget['imgsrc'] = undefined;
+    }
+}
 
 // 드랍다운
 angular.element(document).ready(function () {
@@ -242,6 +254,7 @@ function initPopup(index) {
     $scope.onChangePersist(-1);
 
     setWidgetText('textInput-rating', undefined);
+    initPhotoPreview();
 }
 
 function fillModList(index) {
@@ -271,6 +284,8 @@ function fillModList(index) {
 }
 
 $scope.openRegList = function () {
+    $scope.checklist.currentIndex = -1;
+
     let widget = getWidgetByName($scope.reglist);
     if (widget) {
         initPopup(-1);

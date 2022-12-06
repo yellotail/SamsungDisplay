@@ -1672,6 +1672,8 @@
                                                             "widget-id": "column-10",
                                                             "widget-name": "column-10",
                                                             "is-widget-container": "true",
+                                                            "justification": "center",
+                                                            "alignment": "center",
                                                             "padding": "10px 0px 10px 0px"
                                                           },
                                                           "name": "twx-col",
@@ -1735,9 +1737,9 @@
                                                                                         {
                                                                                           "attributes": {
                                                                                             "twx-widget": "",
-                                                                                            "widget-id": "image-3",
+                                                                                            "widget-id": "image-takePhoto",
                                                                                             "image-align": "center",
-                                                                                            "widget-name": "image-3",
+                                                                                            "widget-name": "image-takePhoto",
                                                                                             "imgsrc": "Icons/ic_photo.svg"
                                                                                           },
                                                                                           "name": "twx-image2",
@@ -1747,7 +1749,7 @@
                                                                                                 "eventbind-id": "eb-1670203333227",
                                                                                                 "source-type": "widget",
                                                                                                 "source-label": "이미지",
-                                                                                                "source-name": "image-3",
+                                                                                                "source-name": "image-takePhoto",
                                                                                                 "source-event": "click",
                                                                                                 "handler-type": "ui",
                                                                                                 "handler-name": "camera-1",
@@ -1837,11 +1839,10 @@
                                                                 {
                                                                   "attributes": {
                                                                     "twx-widget": "",
-                                                                    "widget-id": "image-5",
-                                                                    "widget-name": "image-5",
-                                                                    "width": "50px",
-                                                                    "height": "30px",
-                                                                    "visible": "false"
+                                                                    "widget-id": "image-photoPreview",
+                                                                    "widget-name": "image-photoPreview",
+                                                                    "width": "80px",
+                                                                    "height": "80px"
                                                                   },
                                                                   "name": "twx-image2",
                                                                   "children": [
@@ -1862,6 +1863,22 @@
                                                                   ]
                                                                 }
                                                               ]
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "attributes": {
+                                                            "twx-widget": "",
+                                                            "widget-id": "column-155",
+                                                            "widget-name": "column-155",
+                                                            "is-widget-container": "true",
+                                                            "justification": "center",
+                                                            "alignment": "center"
+                                                          },
+                                                          "name": "twx-col",
+                                                          "children": [
+                                                            {
+                                                              "name": "twx-container-content"
                                                             }
                                                           ]
                                                         }
